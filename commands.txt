@@ -1,0 +1,22 @@
+//Comandos para Git
+
+git config --global user.name "svillafrades"                                    ==>
+git config --global user.email "svillafrades@gmail.com"                         ==>
+git init                                                                        ==> Crear un repositorio local
+git add -A                                                                      ==> Agregar todo los archivos no trackeados al stagin agrega
+git commit -m "mensaje"                                                         ==> Realizar un commit
+git commit -am "mensaje"                                                        ==> Commit + git add
+
+// agregar llaves SSH
+
+ssh-keygen -t rsa -b 4096 -C "svillafrades@gmail.com"                           ==> Generar llaves desde ~/
+eval $(ssh-agent -s)                                                            ==> Verifical servidor SSH
+ssh-add ~/.ssh/id_rsa                                                           ==> Agregar llave privada
+
+git remote add origin git@github.com:juanvillafrades/Algoritmos.git             ==>
+
+
+
+
+
+
