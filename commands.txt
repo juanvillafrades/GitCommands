@@ -49,6 +49,8 @@ git remote -v                                                                   
 git tag -a v0.1 -m "comentario"                                                 ==> Agregar el tag v0.1
 git show-ref --tags                                                             ==> Mostrar tags
 git tag -d nombre                                                               ==> Borrar tag
+git push origin --tags                                                          ==> Enviar tags a repo remoto
+
 
 
 
