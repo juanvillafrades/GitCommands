@@ -1,11 +1,27 @@
 //Comandos para Git
 
-git config --global user.name "svillafrades"                                    ==>
-git config --global user.email "svillafrades@gmail.com"                         ==>
+// Configuracion inicial 
+
+git config --global user.name "svillafrades"                                    ==> Agregar usuario
+git config --global user.email "svillafrades@gmail.com"                         ==> Agregar email
+git config --global -l                                                          ==> Ver Configuracion
+
+//Basicos
+
 git init                                                                        ==> Crear un repositorio local
 git add -A                                                                      ==> Agregar todo los archivos no trackeados al stagin agrega
 git commit -m "mensaje"                                                         ==> Realizar un commit
 git commit -am "mensaje"                                                        ==> Commit + git add
+git status                                                                      ==> Estado de los archivos
+git log --oneline                                                               ==> historial del archivo
+git log --stat                                                                  ==> Cambios hechos en cada commit
+git log --all --graph --decorate --oneline                                      ==> historial del archivo PRO
+git show                                                                        ==> historial de cambios
+
+// Usar con cuidado
+git reset HEAD                                                                  ==> Sacar archivos de staging area
+git rm --cached                                                                 ==> Mover archivos a untracked
+git rm --force                                                                  ==> Elimina archivos de Git y del disco, conservando historial
 
 // agregar llaves SSH
 
@@ -13,9 +29,26 @@ ssh-keygen -t rsa -b 4096 -C "svillafrades@gmail.com"                           
 eval $(ssh-agent -s)                                                            ==> Verifical servidor SSH
 ssh-add ~/.ssh/id_rsa                                                           ==> Agregar llave privada
 
-git remote add origin git@github.com:juanvillafrades/Algoritmos.git             ==>
+// Ramas
+git checkout rama                                                               ==> Mover el HEAD a otra rama
+git checkout (sha) archivo.txt                                                  ==> Regresar a una version anteror del archivo
+git branch nombre                                                               ==> crear nueva rama
+git merge nombreRama                                                            ==> Combinar ramas
+git branch -d                                                                   ==> Eliminar rama
 
+// Repo remoto
+git remote add origin git@github.com:juanvillafrades/Algoritmos.git             ==> Agregar repositorio remoto
+git remote set-url origin URL..                                                 ==> Modificar url de origin
+git clone URL..                                                                 ==> Copiar servidor remoto en local
+git push origin master                                                          ==> Enviar cambio a repositorio remoto
+git pull origin master                                                          ==> Traer cambios de repositorio remoto y hacer merge con local
+git pull origin master --allow-unrelated-histories                              ==> Traer cambios de repositorio remoto y hacer merge con local cuando hay archivos diferentes
+git remote -v                                                                   ==> Mostrar origin
 
+// Tags
+git tag -a v0.1 -m "comentario"                                                 ==> Agregar el tag v0.1
+git show-ref --tags                                                             ==> Mostrar tags
+git tag -d nombre                                                               ==> Borrar tag
 
 
 
